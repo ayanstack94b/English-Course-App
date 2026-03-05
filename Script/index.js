@@ -1,6 +1,6 @@
 const createElement = (arr) => {
   const htmlElement = arr.map((el) => `<span class="btn">${el}</span>`);
-  return(htmlElement.join(" "));
+  return htmlElement.join(" ");
 };
 
 const loadLessons = () => {
@@ -120,4 +120,19 @@ const displayLevelWord = (words) => {
 };
 
 loadLessons();
-// my_modal_5.showModal();
+
+document.getElementById("btn-search").addEventListener("click", () => {
+  removeActive();
+  const input = document.getElementById("input-search");
+  const searchValue = input.value.trim().toLowerCase();
+
+  fetch("https://openapi.programming-hero.com/api/words/all")
+    .then((res) => res.json())
+    .then((data) => {
+      const allWords = data.data;
+      const filterWords = allWords.filter((word) =>
+        word.word.toLowerCase().includes(searchValue),
+      );
+      displayLevelWord(filterWords);
+    });
+});
