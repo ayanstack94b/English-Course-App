@@ -102,8 +102,46 @@
     </section>
 
     <section id="word-container" class="bg-gray-100 p-10 w-11/12 mx-auto rounded my-10 grid grid-cols-3 gap-5">
-     
+        <div class="text-center bg-sky-100 col-span-full rounded-xl py-10 space-y-6 bangla">
+            <p class="text-xl font-medium text-gray-400">আপনি এখনো কোন Lesson Select করেন </p>
+            <h2 class="text-4xl font-bold">একটি Lesson Select করুন।</h2>
+        </div>
     </section>
+
+    <!-- search section -->
+    <section>
+        <div class="join">
+            <div>
+                <label class="input validator join-item">
+                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
+                            stroke="currentColor">
+                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </g>
+                    </svg>
+                    <input type="email" placeholder="mail@site.com" required />
+                </label>
+                <div class="validator-hint hidden">Enter valid email address</div>
+            </div>
+            <button class="btn btn-neutral join-item">Join</button>
+        </div>
+    </section>
+
+    <!-- modal -->
+    <dialog id="word_modal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <div id="details-container" class="space-y-5">
+
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
 
     <!-- js linked here -->
     <script src="/Script/index.js"></script>
